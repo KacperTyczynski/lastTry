@@ -7,7 +7,7 @@ module.exports = function (controller) {
       const content =  await controller.build(req.query.email)
       res.set('Content-Type', 'text/html').send(content.html)
     } catch (e) {
-      console.log('eee macarena')
+      console.log('eee macarena2')
       res.status(400).send(e.message)
     }
   })
