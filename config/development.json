@@ -1,0 +1,16 @@
+{
+    "rssparser": {
+        "db": {
+        "url": "mongodb://localhost:27017",
+        "name": "feedparser",
+        "options": {
+            "useUnifiedTopology": true
+        }
+        },
+        "mailgun": {
+            "domain": "sandboxe0f16c314a3d4617a3a0e4cadac299be.mailgun.org",
+            "apiKey": "71b35d7e-8c124c2b"
+        },
+        "port": 8000
+    }
+}

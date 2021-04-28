@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RSS Feedmail</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">    
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+            <!--LOGO-->
+            <a class="navbar-brand" href="">
+            <img src="/images/logo.png" width="35" height="35" alt="rssLogo">
+                RSS Feedmail
+            </a>
+            <!-- PRZYCISKI-->
+            <div>
+            <form class="form-inline mt-2 mt-md-0">
+                <button class="btn btn-sm btn-outline-secondary" type="submit" id="savebtn" onclick="saveChanges()">Save</button>        
+                <button class="btn btn-sm btn-outline-secondary" type="button" id="previewbtn" onclick="getPreview()">Preview</button>
+                <button class="btn btn-outline-success me-2" type="button" id="sendbtn" onclick="sendMail()">SEND</button>
+            </form>    
+            </div>
+            </div>
+        </nav>
+    </header>
+    <!--Koniec paska menu u góry strony-->
+    <br>
+    
+    <!--Początek lewej strony-->
+    <form>
+    <div class="row">
+        <div class="col-md-6">
+            <h6>Adres e-mail:</h6>
+            <div class="card card-body">
+                <div class="col-md-12 col-12">
+                    <!-- Email -->
+                    <div class="form-group">
+                        <input type="email" class="form-control" id="e-mail" name="email" placeholder="nazwisko_nralbumu@cloud.wsb.wroclaw.pl">
+                        <small id="emailHelp" class="form-text text-muted">Pssss.. Twoje dane są bezpieczne, nikomu ich nie dam</small>
+                    </div>
+                </div>
+            </div>
+                <hr>
+            <div class="card card-body">
+                <div class="col-md-12 col-10" id="iframe">
+                    <table class="table table-sm">
+                        <!--Miejsce na wrzut RSS       TZW. IFRAME-->
+                        <tr>
+                            <iframe id="encoder_iframe" height="700" width="100" src=""> 
+                            </iframe>
+                        <br>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>  
+    <!--Koniec lewej strony-->
+
+    <!--Początek prawej strony-->
+        <div class="col-md-6">
+                <h6>RSS Url</h6>
+                <!--Początek RSS URL-->
+                <div class="card card-body">
+                    <div class="col-md-12 col-6">
+                            <div class="form-group">
+                                <input type="url" name="rss" id="url"
+                                    placeholder="https://jakisprzyklad.pl"
+                                    pattern="https://.*" size="80"
+                                    required
+                                >
+                                <button type="button" id="btn" onclick="addRssFromInput()"> Dodaj </button>
+                            </div>                
+                    </div>
+                </div>
+    </form>        
+            <!--Koniec RSS url-->
+            <hr>
+            <!--Początek sekcji RSS-->
+            <section class="container">
+                <div class="card text-white bg-dark mb-3" style="max-width: 55rem;">
+                    <div class="card-body">
+                        <h5 class="card-title"></h5>
+                        <p class="card-text">RSS
+                        <ul class="list-group list-group-flush" id="list_rss" style="color:black">
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <!--Koniec sekcji RSS-->
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src=https://code.jquery.com/jquery-3.3.1.min.js></script>
+    <script src= "/javascript/events.js" >
+    </script>
+</body>
+</html>
